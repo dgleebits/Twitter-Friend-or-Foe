@@ -28,13 +28,13 @@ pathToFile = sys.argv[1]
 f = open(pathToFile, 'r')
 for targetTwitterUser2 in f.readlines():
   print "working on " + targetTwitterUser2
-  friends2ndLevel = tweepy.api.followers_ids(targetTwitterUser2)
+  followers2ndLevel = tweepy.api.followers_ids(targetTwitterUser2)
 
   f = open('2ndLevelDump_'+targetTwitterUser2, 'w')
-  for friend in friends2ndLevel:
-    output = friend
-    print friend
-    f.write("%s\n" % friend)
+  for follower in followers2ndLevel:
+    output = follower
+    print follower
+    f.write("%s\n" % follower)
   f.close()
 
 f.close()
