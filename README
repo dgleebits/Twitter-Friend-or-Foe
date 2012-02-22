@@ -1,0 +1,30 @@
+#! /usr/bin/python
+
+'''
+Python program to rip Follower and Friends ID's of a targetTwitterUser
+version 0.1 alpha @dgleebits
+'''
+
+import sys
+import time
+import os
+import tweepy
+
+#dependency is the tweepy package download at: http://code.google.com/p/tweepy/
+
+#globals
+dumpFileDirectory = 'FollowFriends'
+targetTwitterUser = sys.argv[1]
+
+#assignment of two arrays
+friends = tweepy.api.friends_ids(targetTwitterUser)
+followers = tweepy.api.followers_ids(targetTwitterUser)
+  
+#basic ouput to std out
+print "here are the followers"
+for person in followers:
+  print person
+  
+print "here are the friends"
+for person in friends:
+  print person
