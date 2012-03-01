@@ -31,6 +31,12 @@ class StreamWatcherListener(tweepy.StreamListener):
 
 def main():
     # Prompt for login credentials and setup stream object
+    #
+    #############################    convert to oauth   #########################################
+    #
+    #
+    
+    
     username = raw_input('Twitter username: ')
     password = getpass('Twitter password: ')
     stream = tweepy.Stream(username, password, StreamWatcherListener(), timeout=None)
